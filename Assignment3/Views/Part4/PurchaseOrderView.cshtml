@@ -1,0 +1,100 @@
+﻿@using part3.Models
+@model List<Computer_composit>
+
+@{
+    string user_authorized = "";
+    if (Request.Cookies["authorized"] != null)
+    {
+        HttpCookie cookie = Request.Cookies["authorized"];
+        user_authorized = cookie["name"];
+    }
+
+    int numOfOrders = Model.Count;
+}
+<div id="pc_store_banner">
+    <a href="/Part4"><img src="~/Images/Shared/Logo.png" id="logo_image" /></a>
+    <div class='auth_window' id="login_window">
+        <div id="form_login">
+            <form action="/Login/Login" method="post">
+                <input type="text" name="username" id="login_user_name" placeholder="username">
+                <input type="password" name="password" id="login_pass" placeholder="password">
+                <button class="btn_submit" id="btn_login_submit" type="submit" name="form1">Login</button>
+            </form>
+            <form action="/Login/createuser" method="post">
+                <button class="btn_submit" type="submit">Sign Up</button>
+            </form>
+            <form action="/Login/RecoverPassword" method="post">
+                <button class="btn_submit" type="submit">Recover Password</button>
+            </form>
+        </div>
+        <p id="welcome_user"></p>
+        <form action="/Part4/CustomerOrders" method="post" id="order_btn">
+            <button type="submit">Your Orders</button>
+        </form>
+        <form action="/Login/Logout" method="post" id="form_logout">
+            <button class="btn_submit" id="btn_login_submit" type="submit" name="form1">Logout</button>
+        </form>
+    </div>
+
+    <div id="pc_nav_leftside">
+        <form action="/Part4/ContactUs" method="post">
+            <button class="btn_submit" type="submit">Feedback</button>
+        </form>
+        <form action="/Part4/Feedback" method="post">
+            <button class="btn_submit" type="submit">ContactUs</button>
+        </form>
+        <div class="shopping_cart_icon_container">
+            <a href="/Part4/Cart" class="shopping_cart_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div id="body_container">
+        <h2 id="cart_title">Your Order Complete</h2>
+        <form action="/Part4/Index" method="post">
+            <button id="btn_pay">Continue Shopping</button>
+        </form>
+
+
+        <br />
+
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td>
+                        <img id="image_shown" src="@Url.Content(item.image_path)" style="height: 100px; width: auto" />
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+    </div>
+
+@section scripts{ 
+
+        <script>
+        $(window).ready(function () {
+            if ("@user_authorized" != "") {
+                $("#welcome_user").html("Welcome, @user_authorized");
+                $("#form_login").hide();
+            } else {
+                $("#welcome_user").hide();
+                $("#form_logout").hide();
+            }
+            });
+
+    
+    </script>
+}

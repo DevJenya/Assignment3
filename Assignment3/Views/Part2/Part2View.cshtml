@@ -1,0 +1,28 @@
+﻿@using Assignment3.Models;
+
+@model  List<Image_Class>
+
+
+<div class="slideshow_container">
+
+@foreach (var item in Model)
+{
+    String id = "image_shown" + item.img_id;
+
+    <div id=@id class="image_shown">
+        <figure>
+            <img src="@Url.Content(@item.img_location)" alt="@(item.img_description)" class="image_shown_image" />
+            <figcaption>@item.img_description</figcaption>
+        </figure>
+    </div>
+}
+
+<div id="btn_group">
+    <button id="btn_prev">Back</button>
+    <button id="btn_startStop">Play</button>
+    <button id="btn_next">Forward</button>
+    <button id="btn_randOrSeq">Sequential</button>
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/Part2/part2script.js"></script>
+</div>

@@ -15,11 +15,20 @@ namespace Assignment3
 
 
 
-            routes.MapRoute(
-                name: "Part1",
-                url: "{Part1}/{action}",
-                defaults: new { controller = "Part1", action = "Index" }
-            );
+            //routes.MapRoute(
+            //    name: "Part1",
+            //    url: "Part1/{action}"
+            //);
+
+            //routes.MapRoute(
+            //    name: "Part2",
+            //    url: "Part2/{action}"
+            //);
+
+            //routes.MapRoute(
+            //name: "Part3",
+            //url: "Part3/{action}/{id}"
+            //);
 
             routes.MapRoute(
                 name: "Default",

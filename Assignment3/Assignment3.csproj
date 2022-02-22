@@ -156,10 +156,25 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Part1Controller.cs" />
+    <Compile Include="Controllers\Part2Controller.cs" />
+    <Compile Include="Controllers\Part3Controller.cs" />
+    <Compile Include="Controllers\Part4\Part4Controller.cs" />
+    <Compile Include="Controllers\Part4\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Image_Class.cs" />
+    <Compile Include="Models\Part3\Computer_composit.cs" />
+    <Compile Include="Models\Part3\Item.cs" />
+    <Compile Include="Models\Part4\CustomerOrder.cs" />
+    <Compile Include="Models\Part4\Order.cs" />
+    <Compile Include="Models\Part4\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Part2DAO\SlideshowDAO.cs" />
+    <Compile Include="Services\Part4\OrderManagement.cs" />
+    <Compile Include="Services\Part4\OrderManagementDAO.cs" />
+    <Compile Include="Services\Part4\SecurityDAO.cs" />
+    <Compile Include="Services\Part4\SecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -170,6 +185,32 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Part2\img1.jpg" />
+    <Content Include="Images\Part2\img10.jpg" />
+    <Content Include="Images\Part2\img11.jpg" />
+    <Content Include="Images\Part2\img12.jpg" />
+    <Content Include="Images\Part2\img13.jpg" />
+    <Content Include="Images\Part2\img14.jpg" />
+    <Content Include="Images\Part2\img15.jpg" />
+    <Content Include="Images\Part2\img16.jpg" />
+    <Content Include="Images\Part2\img17.jpg" />
+    <Content Include="Images\Part2\img18.jpg" />
+    <Content Include="Images\Part2\img19.jpg" />
+    <Content Include="Images\Part2\img2.jpg" />
+    <Content Include="Images\Part2\img20.jpg" />
+    <Content Include="Images\Part2\img21.jpg" />
+    <Content Include="Images\Part2\img3.jpg" />
+    <Content Include="Images\Part2\img4.jpg" />
+    <Content Include="Images\Part2\img5.jpg" />
+    <Content Include="Images\Part2\img6.jpg" />
+    <Content Include="Images\Part2\img7.jpg" />
+    <Content Include="Images\Part2\img8.jpg" />
+    <Content Include="Images\Part2\img9.jpg" />
+    <Content Include="Images\Part3\ASUS_computer.jpg" />
+    <Content Include="Images\Part3\computer.png" />
+    <Content Include="Images\Part3\harddrive.jpg" />
+    <Content Include="Images\Part3\ram.jpg" />
+    <Content Include="Images\Shared\Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\COMP466Assignment3 - Web Deploy.pubxml" />
@@ -179,11 +220,15 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Part2\part2script.js" />
+    <Content Include="Scripts\part4.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -199,10 +244,33 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Part1\Part1View.cshtml" />
+    <Content Include="Views\Part2\Part2View.cshtml" />
+    <Content Include="Views\Part3\About.cshtml" />
+    <Content Include="Views\Part3\Cart.cshtml" />
+    <Content Include="Views\Part3\Contact.cshtml" />
+    <Content Include="Views\Part3\Index.cshtml" />
+    <Content Include="Views\Part3\ItemsList.cshtml" />
+    <Content Include="Views\Part3\ViewCompositeProduct.cshtml" />
+    <Content Include="Views\Part3\ViewProduct.cshtml" />
+    <Content Include="Views\Part4\About.cshtml" />
+    <Content Include="Views\Part4\Cart.cshtml" />
+    <Content Include="Views\Part4\Contact.cshtml" />
+    <Content Include="Views\Part4\Index.cshtml" />
+    <Content Include="Views\Part4\ItemsList.cshtml" />
+    <Content Include="Views\Part4\ViewCompositeProduct.cshtml" />
+    <Content Include="Views\Part4\ViewProduct.cshtml" />
+    <Content Include="Views\Part4\Login\CreateUser.cshtml" />
+    <Content Include="Views\Part4\Login\Login.cshtml" />
+    <Content Include="Views\Part4\Login\RecoverPassword.cshtml" />
+    <Content Include="Views\Part4\OrderManagement\CustomerOrders.cshtml" />
+    <Content Include="Views\Shared\_CartPartialView.cshtml" />
+    <Content Include="Views\Shared\_ComponentDetails.cshtml" />
+    <Content Include="Views\Part4\FedbackView.cshtml" />
+    <Content Include="Views\Part4\ContactUsView.cshtml" />
+    <Content Include="Views\Part4\PurchaseOrderView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
